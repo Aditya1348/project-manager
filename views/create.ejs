@@ -1,0 +1,64 @@
+<%-include("partials/header") %>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+  <a class="navbar-brand" href="/">ProjectManager</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="true" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+     
+     <li class="nav-item active">
+        <a class="nav-link" href="/create/new">Create </a>
+     </li>
+     <li class="nav-item active">
+        <a class="nav-link" href="/join">Join </a>
+     </li>
+     <li class="nav-item active">
+        <a class="nav-link" href="/secret">YourCreation </a>
+     </li>
+     <li class="nav-item active">
+        <a class="nav-link" href="/joinshow/<%=user.username%>">YourJoined</a>
+     </li>
+    </ul>
+    <ul class=" navbar-nav  nav justify-content-end">
+  <li class="nav-item">
+    <a class="nav-link active" href=""><i class="user icon"></i><%=user.username%></a>
+  </li>
+   <li class="nav-item">
+    <a class="nav-link active" title="logout" href="/logout"><i class="sign out alternate icon"></i></a>
+  </li>
+ 
+</ul>
+   
+  </div>
+</nav>
+
+
+ <h1 class="space"></h1>
+  
+
+
+
+
+ <div class="container">
+
+
+<form class="form-group" action="/create/<%=user.username%>" method="POST">
+   <div class="d-flex flex-column align-items-center">
+    <h1 class="white" >Create Your Work To Join Others</h1>
+        
+        <input type="text" class="form-control mb-4 mt-4 " style="width:35%" name="title" value="" placeholder="Work Title">
+      
+        
+          <textarea  class="form-control mb-4 " style="width:35%"  name="describe">Describe Your Work....</textarea>
+       
+      <button class="btn btn-success " style="width:35%"  type="">Create</button>
+      
+   </div>
+   
+</form>
+
+</div>
+<%-include("partials/footer") %>
+
